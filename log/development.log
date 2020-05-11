@@ -2783,3 +2783,155 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 683ms (Views: 681.9ms | ActiveRecord: 0.2ms | Allocations: 154053)
 
 
+Started GET "/posts" for ::1 at 2020-05-10 20:26:21 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 5921)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 265)
+Completed 200 OK in 792ms (Views: 784.5ms | ActiveRecord: 0.3ms | Allocations: 107642)
+
+
+Started DELETE "/posts/6" for ::1 at 2020-05-10 20:26:27 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VdZDzWjt8o9vxrxpSN+ugy/78HPFiVrRRBKgtKAyFVfiqkWFdSwvY2CkPjfnWaCAvLdK9LlK25SdhhEKz6/esQ==", "id"=>"6"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:57:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mComentario Load (0.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 6]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mComentario Destroy (3.0ms)[0m  [1m[31mDELETE FROM "comentarios" WHERE "comentarios"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[35m (41.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 77ms (ActiveRecord: 45.3ms | Allocations: 11454)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:26:27 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 10.4ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 85)
+Completed 200 OK in 91ms (Views: 90.4ms | ActiveRecord: 0.2ms | Allocations: 20338)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-10 20:26:32 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.6ms | Allocations: 943)
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 86)
+Completed 200 OK in 84ms (Views: 80.9ms | ActiveRecord: 0.0ms | Allocations: 21233)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:26:33 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 85)
+Completed 200 OK in 78ms (Views: 77.4ms | ActiveRecord: 0.2ms | Allocations: 20785)
+
+
+Started GET "/posts/7" for ::1 at 2020-05-10 20:26:34 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comentarios/_comentario.html.erb [1 times] (Duration: 1.0ms | Allocations: 292)
+  Rendered comentarios/_form.html.erb (Duration: 1.5ms | Allocations: 774)
+  Rendered posts/show.html.erb within layouts/application (Duration: 18.2ms | Allocations: 2885)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 88)
+Completed 200 OK in 93ms (Views: 88.5ms | ActiveRecord: 0.5ms | Allocations: 23374)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:26:41 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 85)
+Completed 200 OK in 79ms (Views: 77.9ms | ActiveRecord: 0.2ms | Allocations: 20780)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:31:51 -0500
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 6489)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 276)
+Completed 200 OK in 647ms (Views: 606.2ms | ActiveRecord: 1.5ms | Allocations: 99848)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:31:53 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.1ms | Allocations: 85)
+Completed 200 OK in 81ms (Views: 79.7ms | ActiveRecord: 0.2ms | Allocations: 20866)
+
+
+Started GET "/posts/7" for ::1 at 2020-05-10 20:31:55 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 7]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of comentarios/_comentario.html.erb [1 times] (Duration: 7.0ms | Allocations: 579)
+  Rendered comentarios/_form.html.erb (Duration: 19.7ms | Allocations: 3904)
+  Rendered posts/show.html.erb within layouts/application (Duration: 104.1ms | Allocations: 17043)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 88)
+Completed 200 OK in 196ms (Views: 182.8ms | ActiveRecord: 1.7ms | Allocations: 38190)
+
+
+Started GET "/" for ::1 at 2020-05-10 20:31:58 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 89)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 102)
+Completed 200 OK in 81ms (Views: 78.8ms | ActiveRecord: 0.0ms | Allocations: 20570)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 20:31:59 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 88)
+Completed 200 OK in 74ms (Views: 73.3ms | ActiveRecord: 0.2ms | Allocations: 20869)
+
+
