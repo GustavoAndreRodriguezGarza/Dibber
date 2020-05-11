@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'signup', to: 'users#new'
+  resources :users, except: [:new]
   get 'welcome/index'
   resources :posts do
     resources :comentarios

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_11_033928) do
+ActiveRecord::Schema.define(version: 2020_05_11_040021) do
 
   create_table "comentarios", force: :cascade do |t|
     t.text "texto"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2020_05_11_033928) do
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "password_digest"
   end
 
   add_foreign_key "comentarios", "posts"
