@@ -1,0 +1,8 @@
+<p>
+    <%= comentario.texto %>
+  </p>
+<p>
+  <%= link_to 'Eliminar Comentario', [comentario.post, comentario],
+               method: :delete,
+               data: { confirm: 'Seguro que desea realizar esta accion?' } %>
+</p>

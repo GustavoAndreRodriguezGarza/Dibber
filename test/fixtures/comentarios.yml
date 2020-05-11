@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  texto: MyText
+  compartir: 1
+  likes: 1
+  post: one
+
+two:
+  texto: MyText
+  compartir: 1
+  likes: 1
+  post: two

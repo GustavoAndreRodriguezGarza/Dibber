@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Posts</h1>
+<% @posts.each do |post| %>
+  <div class="row">
+   <div class="col-xs-8 col-xs-offset-2">
+    <div class="well well-lg">
+     <div class="article-title">
+      <%= link_to post.texto, post_path(post) %>
+     </div>
+     <div class="article-body">
+      <%= truncate(post.texto, length: 100) %>
+     </div>
+     <div class="article-actions">
+      <%= link_to "Edit", edit_post_path(post), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Seguro de querer eliminar el dribble?"}, class: "btn btn-xs btn-danger" %>
+      <%= link_to 'Mostrar Hilo', post %>
+      <%= link_to 'Redibb', class: "btn btn-xs btn-primary" %>
+      <%= link_to 'Fav', class: "btn btn-xs btn-primary" %>
+      </div>
+    </div>
+   </div>
+  </div>
+ <% end %>
+
