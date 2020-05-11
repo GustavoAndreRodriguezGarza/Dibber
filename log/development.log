@@ -3353,3 +3353,642 @@ Migrating to AddPasswordDigestToUsers (20200511040021)
   [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2020-05-10 23:14:56 -0500
+  [1m[35m (7.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 83.8ms | Allocations: 13348)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 280)
+Completed 200 OK in 1093ms (Views: 1024.8ms | ActiveRecord: 2.3ms | Allocations: 110980)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:15:10 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 25.6ms | Allocations: 2301)
+  Rendered users/new.html.erb within layouts/application (Duration: 38.9ms | Allocations: 2606)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 1.2ms | Allocations: 7864)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <%= render 'shared/errors', obj: @user %>
+    2: <div class="row">
+    3:  <div class="col-xs-12">
+    4:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/portada" for ::1 at 2020-05-10 23:15:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/portada"):
+  
+actionpack (6.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.2) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.2) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.2) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/signup" for ::1 at 2020-05-10 23:16:12 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.6ms | Allocations: 1126)
+  Rendered users/new.html.erb within layouts/application (Duration: 6.9ms | Allocations: 1201)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1702)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <%= render 'shared/errors', obj: @user %>
+    2: <div class="row">
+    3:  <div class="col-xs-12">
+    4:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:16:27 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 66.3ms | Allocations: 1757)
+  Rendered users/new.html.erb within layouts/application (Duration: 71.4ms | Allocations: 2058)
+Completed 500 Internal Server Error in 91ms (ActiveRecord: 0.0ms | Allocations: 3276)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <%= render 'shared/errors', obj: @user %>
+    2: <div class="row">
+    3:  <div class="col-xs-12">
+    4:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:17:09 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 74.7ms | Allocations: 1627)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms | Allocations: 2837)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <h1 align="center">Iniciar Sesion</h1>
+    2: <%= render 'shared/errors', obj: @user %>
+    3: <div class="row">
+    4:  <div class="col-xs-12">
+    5:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:17:29 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.6ms | Allocations: 73)
+  Rendered users/new.html.erb within layouts/application (Duration: 77.9ms | Allocations: 1911)
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 0.0ms | Allocations: 3126)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <h1 align="center">Iniciar Sesion</h1>
+    2: <%= render 'form' %>
+    3: <%= render 'shared/errors', obj: @user %>
+    4: <div class="row">
+    5:  <div class="col-xs-12">
+    6:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/new.html.erb:3
+Started GET "/signup" for ::1 at 2020-05-10 23:17:50 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 0.7ms | Allocations: 73)
+  Rendered users/new.html.erb within layouts/application (Duration: 83.0ms | Allocations: 1911)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.0ms | Allocations: 3121)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <h1 align="center">Signup</h1>
+    2: <%= render 'form' %>
+    3: <%= render 'shared/errors', obj: @user %>
+    4: <div class="row">
+    5:  <div class="col-xs-12">
+    6:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/new.html.erb:3
+Started GET "/signup" for ::1 at 2020-05-10 23:21:56 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 9.5ms | Allocations: 1752)
+  Rendered users/new.html.erb within layouts/application (Duration: 29.7ms | Allocations: 2061)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms | Allocations: 3271)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <%= render 'shared/errors', obj: @user %>
+    2: <div class="row">
+    3:  <div class="col-xs-12">
+    4:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/" for ::1 at 2020-05-10 23:22:00 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 273)
+Completed 200 OK in 123ms (Views: 119.7ms | ActiveRecord: 0.0ms | Allocations: 21656)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:22:03 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 11.7ms | Allocations: 1494)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 88)
+Completed 200 OK in 158ms (Views: 151.2ms | ActiveRecord: 0.5ms | Allocations: 22396)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:22:07 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 1.2ms | Allocations: 1124)
+  Rendered users/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1197)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 1677)
+
+
+  
+ActionView::Template::Error (Missing partial shared/_errors with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "C:/Users/diego/Documents/Dibber/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actiontext-6.0.3/app/views"
+  * "C:/Ruby26-x64/lib/ruby/gems/2.6.0/gems/actionmailbox-6.0.3/app/views"
+):
+    1: <%= render 'shared/errors', obj: @user %>
+    2: <div class="row">
+    3:  <div class="col-xs-12">
+    4:   <%= form_for(@user, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  
+app/views/users/_form.html.erb:1
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:22:26 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 789.1ms | Allocations: 161700)
+  Rendered users/new.html.erb within layouts/application (Duration: 795.6ms | Allocations: 162008)
+Completed 500 Internal Server Error in 821ms (ActiveRecord: 0.0ms | Allocations: 163234)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `articles_path' for #<#<Class:0x000000000c86c390>:0x000000000c876548>
+Did you mean?  asset_path):
+    33:   </div>
+    34: <% end %>
+    35:   <div class="col-xs-4 col-xs-offset-2">
+    36:   [ <%= link_to 'Cancel request and Return to Articles Listing', articles_path %> ]
+    37:   </div> 
+    38:  </div>
+    39: </div>
+  
+app/views/users/_form.html.erb:36
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:22:48 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 49.1ms | Allocations: 1156)
+  Rendered users/new.html.erb within layouts/application (Duration: 54.0ms | Allocations: 1461)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.8ms | Allocations: 262)
+Completed 200 OK in 198ms (Views: 193.3ms | ActiveRecord: 0.0ms | Allocations: 23190)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:25:06 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 15.4ms | Allocations: 1155)
+  Rendered users/new.html.erb within layouts/application (Duration: 30.3ms | Allocations: 1460)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.4ms | Allocations: 262)
+Completed 200 OK in 174ms (Views: 168.1ms | ActiveRecord: 0.0ms | Allocations: 23185)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:26:02 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 53.9ms | Allocations: 1158)
+  Rendered users/new.html.erb within layouts/application (Duration: 59.6ms | Allocations: 1463)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 2.0ms | Allocations: 262)
+Completed 200 OK in 207ms (Views: 203.4ms | ActiveRecord: 0.0ms | Allocations: 23081)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:26:21 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 64.1ms | Allocations: 3211)
+  Rendered users/new.html.erb within layouts/application (Duration: 69.5ms | Allocations: 3518)
+Completed 500 Internal Server Error in 89ms (ActiveRecord: 0.0ms | Allocations: 4730)
+
+
+  
+ActionView::Template::Error (undefined method `Usuario' for #<User:0x000000000c2b3f48>):
+     7:     <%= f.label :username %>
+     8:    </div>
+     9:    <div class="col-sm-8">
+    10:     <%= f.text_field :Usuario, class: "form-control", placeholder: "Ingresa usuario", autofocus: true %>
+    11:    </div>
+    12:   </div>
+    13:   <div class="form-group">
+  
+app/views/users/_form.html.erb:10
+app/views/users/_form.html.erb:4
+app/views/users/new.html.erb:2
+Started GET "/signup" for ::1 at 2020-05-10 23:26:38 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 37.6ms | Allocations: 1188)
+  Rendered users/new.html.erb within layouts/application (Duration: 41.3ms | Allocations: 1493)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 262)
+Completed 200 OK in 179ms (Views: 172.9ms | ActiveRecord: 0.0ms | Allocations: 23214)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:26:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 52.3ms | Allocations: 1209)
+  Rendered users/new.html.erb within layouts/application (Duration: 57.7ms | Allocations: 1513)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.3ms | Allocations: 262)
+Completed 200 OK in 199ms (Views: 194.3ms | ActiveRecord: 0.0ms | Allocations: 23119)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:27:37 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1468)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 88)
+Completed 200 OK in 156ms (Views: 153.1ms | ActiveRecord: 0.3ms | Allocations: 22487)
+
+
+Started GET "/posts/8/edit" for ::1 at 2020-05-10 23:27:39 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 15.9ms | Allocations: 1367)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 35.6ms | Allocations: 1771)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 86)
+Completed 200 OK in 171ms (Views: 151.3ms | ActiveRecord: 0.6ms | Allocations: 23450)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-10 23:27:43 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.5ms | Allocations: 644)
+  Rendered posts/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 86)
+Completed 200 OK in 115ms (Views: 111.3ms | ActiveRecord: 0.0ms | Allocations: 21324)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:30:22 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 45.1ms | Allocations: 8300)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 89)
+Completed 200 OK in 170ms (Views: 154.1ms | ActiveRecord: 4.1ms | Allocations: 30040)
+
+
+Started GET "/" for ::1 at 2020-05-10 23:30:24 -0500
+Processing by WelcomeController#index as HTML
+  Rendering welcome/index.html.erb within layouts/application
+  Rendered welcome/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 102)
+Completed 200 OK in 149ms (Views: 145.0ms | ActiveRecord: 0.0ms | Allocations: 20989)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:30:34 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 14.2ms | Allocations: 920)
+  Rendered users/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 990)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 87)
+Completed 200 OK in 122ms (Views: 112.0ms | ActiveRecord: 1.2ms | Allocations: 25576)
+
+
+Started POST "/users" for ::1 at 2020-05-10 23:30:51 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ukJsRGRe9Nw0qIrJpwp23gROOyBQ9Dn+xh1PtR5ZAkh0ezvMi2TfuscnhpHM6bAXhzXsSxmtRF6nGX0MfnbiGg==", "user"=>{"username"=>"Diego", "email"=>"diego@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesion"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Diego"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (11.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Diego"], ["email", "diego@gmail.com"], ["created_at", "2020-05-11 04:30:52.011774"], ["updated_at", "2020-05-11 04:30:52.011774"], ["password_digest", "$2a$12$.x21QacQNLze4eoFw4l88OyUiLdXySHzkgbGfeqbpKZuHYY8XJH3m"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (21.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 893ms (ActiveRecord: 33.6ms | Allocations: 110682)
+
+
+  
+NameError (undefined local variable or method `articles_path' for #<UsersController:0x000000000bea3340>):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started POST "/users" for ::1 at 2020-05-10 23:31:25 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"ukJsRGRe9Nw0qIrJpwp23gROOyBQ9Dn+xh1PtR5ZAkh0ezvMi2TfuscnhpHM6bAXhzXsSxmtRF6nGX0MfnbiGg==", "user"=>{"username"=>"Diego", "email"=>"diego24345@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesion"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Diego"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.3ms | Allocations: 870)
+  Rendered users/new.html.erb within layouts/application (Duration: 4.6ms | Allocations: 940)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 84)
+Completed 200 OK in 525ms (Views: 154.3ms | ActiveRecord: 0.9ms | Allocations: 24855)
+
+
+Started POST "/users" for ::1 at 2020-05-10 23:31:32 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"CSsIKAEvl+MPxbz6mkLE3o8fBSSGu48rg1Vq/Q6i9RTHEl+g7hW8hfxKsKLxoQIXDGTST8/i8oviUVhEbo0VRg==", "user"=>{"username"=>"Diego2", "email"=>"diego24345@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesion"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Diego2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 3.5ms | Allocations: 864)
+  Rendered users/new.html.erb within layouts/application (Duration: 16.6ms | Allocations: 934)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 174ms (Views: 143.6ms | ActiveRecord: 1.0ms | Allocations: 24676)
+
+
+Started POST "/users" for ::1 at 2020-05-10 23:31:36 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"c1CpJWJWSKElF8N+PxmhQ1W/OQ4CU7bmePe9LQSxRJq9af6tjWxjx9aYzyZU+meK1sTuZUsKy0YZ84+UZJ6kyA==", "user"=>{"username"=>"Diego2", "email"=>"diego24345@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesion"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "Diego2"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "Diego2"], ["email", "diego24345@gmail.com"], ["created_at", "2020-05-11 04:31:37.084366"], ["updated_at", "2020-05-11 04:31:37.084366"], ["password_digest", "$2a$12$xbSCQXURXrAPqzDzlQ.k4.hGFqu1.zJheUqWogVFkBP68eCksPS3i"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (22.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Completed 500 Internal Server Error in 916ms (ActiveRecord: 27.0ms | Allocations: 110204)
+
+
+  
+NameError (undefined local variable or method `articles_path' for #<UsersController:0x000000000bed0e58>):
+  
+app/controllers/users_controller.rb:9:in `create'
+Started GET "/signup" for ::1 at 2020-05-10 23:32:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.0ms | Allocations: 4147)
+
+
+  
+NameError (uninitialized constant #<Class:0x000000000c515c50>::VALID_EMAIL_REGEX):
+  
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:3:in `new'
+Started GET "/posts" for ::1 at 2020-05-10 23:32:39 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.6ms | Allocations: 8271)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 89)
+Completed 200 OK in 147ms (Views: 136.3ms | ActiveRecord: 2.9ms | Allocations: 29988)
+
+
+Started GET "/signup" for ::1 at 2020-05-10 23:32:47 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.8ms | Allocations: 921)
+  Rendered users/new.html.erb within layouts/application (Duration: 12.1ms | Allocations: 991)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 87)
+Completed 200 OK in 148ms (Views: 126.3ms | ActiveRecord: 1.2ms | Allocations: 25610)
+
+
+Started POST "/users" for ::1 at 2020-05-10 23:33:10 -0500
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"q8yzw31XcAmT/tHIrsrDTcUpOE6W83vNLbxaImnQK/Bl9eRLkm1bb2Bx3ZDFKQWERlLvJd+qBm1MuGibCf/Log==", "user"=>{"username"=>"dDiego", "email"=>"Diego01@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Iniciar sesion"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE LOWER("users"."username") = LOWER(?) LIMIT ?[0m  [["username", "dDiego"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[36mUser Create (11.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?)[0m  [["username", "dDiego"], ["email", "Diego01@gmail.com"], ["created_at", "2020-05-11 04:33:10.932128"], ["updated_at", "2020-05-11 04:33:10.932128"], ["password_digest", "$2a$12$WIslvSo3vZTU1OcZzbiSQ.hK3cfYsrTj/zY/g1lLdegYPIaG6ooXK"]]
+  ↳ app/controllers/users_controller.rb:7:in `create'
+  [1m[35m (23.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7:in `create'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 489ms (ActiveRecord: 35.1ms | Allocations: 4157)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:33:11 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 14.3ms | Allocations: 1101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 85)
+Completed 200 OK in 151ms (Views: 149.3ms | ActiveRecord: 0.6ms | Allocations: 21453)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-10 23:34:20 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.7ms | Allocations: 624)
+  Rendered posts/new.html.erb within layouts/application (Duration: 8.7ms | Allocations: 717)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.3ms | Allocations: 84)
+Completed 200 OK in 137ms (Views: 135.8ms | ActiveRecord: 0.0ms | Allocations: 21056)
+
+
+Started POST "/posts" for ::1 at 2020-05-10 23:34:32 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"wOLWIZpjPKaknmqNipg6dYNGVtctWuHlEGb5T1F0u+sTAWEfaiHp0kyT3YHcdMNdF5oqhKLYrK7i8BP099/mow==", "post"=>{"texto"=>"Hola, este es mi primer Dibb.", "compartir"=>"0", "likes"=>"0"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:30:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mPost Create (10.1ms)[0m  [1m[32mINSERT INTO "posts" ("texto", "compartir", "likes", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["texto", "Hola, este es mi primer Dibb."], ["compartir", 0], ["likes", 0], ["created_at", "2020-05-11 04:34:32.141781"], ["updated_at", "2020-05-11 04:34:32.141781"], ["user_id", 2]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[35m (23.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/posts/9
+Completed 302 Found in 112ms (ActiveRecord: 34.7ms | Allocations: 4209)
+
+
+Started GET "/posts/9" for ::1 at 2020-05-10 23:34:32 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.8ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/views/posts/show.html.erb:21
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 29.2ms | Allocations: 5992)
+  Rendered posts/show.html.erb within layouts/application (Duration: 140.1ms | Allocations: 11563)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.5ms | Allocations: 88)
+Completed 200 OK in 306ms (Views: 282.7ms | ActiveRecord: 3.6ms | Allocations: 32630)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:34:38 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 2507)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 85)
+Completed 200 OK in 145ms (Views: 143.0ms | ActiveRecord: 0.8ms | Allocations: 22857)
+
+
+Started DELETE "/posts/8" for ::1 at 2020-05-10 23:34:49 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1LvRmBixNucki2++373VczDn0vQdBktRIGUrXldnwbAagoYQ94sdgdcEY+a0XhO6s5wFn1RfNvFBYRnnN0gh4g==", "id"=>"8"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mComentario Load (0.9ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 8]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mPost Destroy (10.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[35m (19.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 107ms (ActiveRecord: 31.0ms | Allocations: 4445)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:34:49 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 23.3ms | Allocations: 1846)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 85)
+Completed 200 OK in 184ms (Views: 180.8ms | ActiveRecord: 1.8ms | Allocations: 22190)
+
+
+Started DELETE "/posts/9" for ::1 at 2020-05-10 23:34:54 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hb1LXQoav/JP6Xz/I1S2iZvFxgrPwmffmI/iYpTxDppLhBzV5SCUlLxmcKdIt3BAGL4RYYabGn/5i9Db9N7uyA==", "id"=>"9"}
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:69:in `set_post'
+  [1m[36mCACHE Post Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mComentario Load (0.6ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 9]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[36mPost Destroy (11.1ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 9]]
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+  [1m[35m (20.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:59:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 117ms (ActiveRecord: 32.6ms | Allocations: 4402)
+
+
+Started GET "/posts" for ::1 at 2020-05-10 23:34:55 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:4
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.0ms | Allocations: 624)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.4ms | Allocations: 94)
+Completed 200 OK in 177ms (Views: 174.4ms | ActiveRecord: 0.8ms | Allocations: 20987)
+
+
