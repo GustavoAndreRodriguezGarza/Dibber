@@ -72,6 +72,8 @@ class PostsController < ApplicationController
   def update_like
     post = Post.find_by(id: params[:id])
     post.increment!(:likes,  1)
+    auxiliar = post.texto
+    Post.where(texto: auxiliar).update_all(likes: post.likes)
     respond_to do |format|
       format.html { redirect_to posts_url }
       format.json { head :no_content }
@@ -81,6 +83,8 @@ class PostsController < ApplicationController
   def update_redibbs
     post = Post.find_by(id: params[:id])
     post.increment!(:compartir,  1)
+    auxiliar = post.texto
+    Post.where(texto: auxiliar).update_all(compartir: post.compartir)
     rdb = post.dup
     rdb.update_attribute(:cloned, 1)
     rdb.save
