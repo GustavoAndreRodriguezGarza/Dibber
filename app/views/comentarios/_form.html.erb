@@ -1,0 +1,15 @@
+<%= form_with(model: [ @post, @post.comentarios.build ], local: true) do |form| %>
+    <p>
+      <%= form.text_field :texto %>
+    </p>
+    <p>
+        <%= form.number_field :compartir, type:"hidden", value: "0" %>
+        </p>
+    
+      <p>
+        <%= form.number_field :likes, type:"hidden", value: "0" %>
+        </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>

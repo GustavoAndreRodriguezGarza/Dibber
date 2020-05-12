@@ -1,0 +1,97 @@
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+$navbar-default-bg: black;
+@import "bootstrap-sprockets";
+@import "bootstrap";
+.brightness {
+    background-color: white;
+    display: inline-block;
+
+}
+.brightness img:hover {
+    opacity: .5;
+}
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+input[type=checkbox] {
+    padding-left:5px;
+    padding-right:5px;
+    border-radius:15px;
+
+    -webkit-appearance:button;
+
+    border: double 2px #00F;
+
+    background-color:#0b0095;
+    color:#FFF;
+    white-space: nowrap;
+    overflow:hidden;
+
+    width:15px;
+    height:15px;
+}
+
+input[type=checkbox]:checked {
+    background-color:#000;
+    border-left-color:#06F;
+    border-right-color:#06F;
+}
+
+input[type=checkbox]:hover {
+    box-shadow:0px 0px 10px #1300ff;
+}
+.container {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+#logo {
+ float: left;
+ font-size: 1.7em;
+ color: white;
+ text-transform: uppercase;
+ letter-spacing: -1px;
+ font-weight: bold;
+}
+#logo:hover {
+ color: #fff;
+ text-decoration: none;
+}
+.article-actions {
+ border-top: 1px solid #eaeaea;
+ padding-top: 5px;
+}
+.article-title {
+    font-weight: bold;
+    font-size: 1.5em;
+   }
+.article-body {
+    border-top: 1px solid #eaeaea;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 25px;
+   }
+.article-meta-details {
+ border-top: 1px solid #eaeaea;
+ margin-top: 15px;
+}
+.description {
+ margin-top: 0;
+}
+.listing {
+ list-style: none;
+ padding-left: 0;
+}
+.article-meta-details {
+    border-top: 1px solid #eaeaea;
+    margin-top: 15px;
+   }

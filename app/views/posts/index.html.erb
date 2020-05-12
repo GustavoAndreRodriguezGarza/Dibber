@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1 align="center">Latest Dibbs</h1>
+<% @posts.each do |post| %>
+  <div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+  <div class="well well-lg">
+  <% if post.cloned == 1 %>
+  <large style="color:green; text-decoration: underline; font-size:15px"><%= post.user.username if post.user %> Redibbed</large>
+   <% end %>
+     <div class="article-body">
+     <%= link_to post.texto, post_path(post) %>
+      </div>
+      <div class="article-meta-details">
+      <medium>Sent by: <%= post.user.username if post.user %>
+      <% if post.cloned == 0 %>
+      | <%= time_ago_in_words(post.created_at) %> ago, 
+      last updated: <%= time_ago_in_words(post.updated_at) %> ago
+      <% end %></medium>
+     </div>
+     <div class="brightness" align="left">
+     <%= link_to image_tag("unnamed.png", alt: "rss feed", height: 32, width: 32), controller: "posts", action: "update_redibbs", id: post.id %>
+     <%= post.compartir %>
+     <%= link_to image_tag("1.png", alt: "rss feed", height: 32, width: 42), controller: "posts", action: "update_like", id: post.id %>
+     <%= post.likes %>
+     <% if post.cloned == 0 %>
+      <div></div><hr>
+      <%= link_to "Edit", edit_post_path(post), class: "btn btn-xs btn-primary" %>
+      <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: "Seguro de querer eliminar el dibb?"}, class: "btn btn-xs btn-danger" %>
+      <% end %>
+      </div>
+    </div>
+   </div>
+  </div>
+ <% end %>
+
