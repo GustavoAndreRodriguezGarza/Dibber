@@ -19736,3 +19736,965 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 121ms (Views: 117.3ms | ActiveRecord: 0.7ms | Allocations: 31339)
 
 
+Started GET "/posts/4/edit" for ::1 at 2020-05-12 14:54:44 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.7ms | Allocations: 1048)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 9.1ms | Allocations: 1444)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 102)
+Completed 200 OK in 89ms (Views: 79.4ms | ActiveRecord: 0.2ms | Allocations: 22435)
+
+
+Started PATCH "/posts/4" for ::1 at 2020-05-12 14:54:52 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"spDH2eSGdergcr0VogNhXgdbRX5wVXWmHPGMQSBi6eH4i7CCeMhEHxEpQIroTI8OEBjmtTMQYzXyZluiE7XKdA==", "post"=>{"texto"=>"CuartoDibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "compartir" = ?, "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "CuartoDibb"], ["compartir", 0], ["likes", 0], ["updated_at", "2020-05-12 19:54:52.436901"], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 23ms (ActiveRecord: 3.7ms | Allocations: 4875)
+
+
+Started GET "/posts/4" for ::1 at 2020-05-12 14:54:52 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 1.5ms | Allocations: 771)
+  Rendered posts/show.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2230)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 91ms (Views: 81.9ms | ActiveRecord: 0.5ms | Allocations: 23251)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 14:56:04 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 29.3ms | Allocations: 9406)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 101ms (Views: 99.6ms | ActiveRecord: 0.8ms | Allocations: 29653)
+
+
+Started GET "/posts/4/edit" for ::1 at 2020-05-12 14:57:45 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:100:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.3ms | Allocations: 760)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 2.3ms | Allocations: 886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 93ms (Views: 76.5ms | ActiveRecord: 1.6ms | Allocations: 28768)
+
+
+Started PATCH "/posts/4" for ::1 at 2020-05-12 14:57:51 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"R97G0dXZ0ViMbUp179nCurxiPJ64S/rjXKnbCNV5jNENxbGKSZfgrX02t+qllizqqyGfVfsO7HCyPgzr5q6vRA==", "post"=>{"texto"=>"Tercer Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:100:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 1755)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/posts_controller.rb:52:in `update'
+Started PATCH "/posts/4" for ::1 at 2020-05-12 14:58:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"R97G0dXZ0ViMbUp179nCurxiPJ64S/rjXKnbCNV5jNENxbGKSZfgrX02t+qllizqqyGfVfsO7HCyPgzr5q6vRA==", "post"=>{"texto"=>"Tercer Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[36mPost Update (0.9ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "Tercer Dibb"], ["updated_at", "2020-05-12 19:58:27.696188"], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+  [1m[35m (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:51:in `block in update'
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 51ms (ActiveRecord: 6.8ms | Allocations: 18431)
+
+
+Started GET "/posts/4" for ::1 at 2020-05-12 14:58:27 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 7.0ms | Allocations: 5411)
+  Rendered posts/show.html.erb within layouts/application (Duration: 15.1ms | Allocations: 8096)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 1.6ms | Allocations: 29031)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 14:58:29 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.4ms | Allocations: 9941)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 102ms (Views: 100.4ms | ActiveRecord: 0.6ms | Allocations: 30181)
+
+
+Started DELETE "/posts/4" for ::1 at 2020-05-12 14:58:33 -0500
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QnJUFMsNpQcKteb2lh4cy5LsfHeAneN+n05Gz8e9j+Mz+4tl9ZiW8JkzRNCVh+orsR/k/Avw9IqYYsi8PkWUTA==", "id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:64:in `destroy'
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."texto" = ?[0m  [["texto", "Tercer Dibb"]]
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[36mPost Destroy (0.7ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[36mComentario Load (0.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 5]]
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[36mPost Destroy (0.9ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:66:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 32ms (ActiveRecord: 7.5ms | Allocations: 8224)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 14:58:33 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.4ms | Allocations: 6310)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 98ms (Views: 96.4ms | ActiveRecord: 0.6ms | Allocations: 26543)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:03:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 53.8ms | Allocations: 18781)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 106)
+Completed 200 OK in 135ms (Views: 125.2ms | ActiveRecord: 2.9ms | Allocations: 40391)
+
+
+Started GET "/posts/3/edit" for ::1 at 2020-05-12 15:04:26 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:97:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.2ms | Allocations: 751)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 79ms (Views: 71.2ms | ActiveRecord: 0.3ms | Allocations: 21837)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:04:28 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 20.0ms | Allocations: 6308)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.6ms | Allocations: 26639)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:07:28 -0500
+  
+SyntaxError (C:/Users/gusta/Desktop/Dibber-Final/config/routes.rb:7: syntax error, unexpected ':', expecting end
+      get: update
+         ^
+C:/Users/gusta/Desktop/Dibber-Final/config/routes.rb:15: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:7: syntax error, unexpected ':', expecting end
+config/routes.rb:15: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:7: syntax error, unexpected ':', expecting end
+config/routes.rb:15: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:7: syntax error, unexpected ':', expecting end
+config/routes.rb:15: syntax error, unexpected end, expecting end-of-input
+Started GET "/posts" for ::1 at 2020-05-12 15:07:42 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#update as HTML
+Completed 404 Not Found in 7ms (ActiveRecord: 1.1ms | Allocations: 2696)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:97:in `set_post'
+Started GET "/" for ::1 at 2020-05-12 15:07:49 -0500
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms | Allocations: 4009)
+
+
+  
+NameError (uninitialized constant #<Class:0x000000000bd3feb8>::VALID_EMAIL_REGEX):
+  
+app/models/user.rb:6:in `<class:User>'
+app/models/user.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:3:in `new'
+Started GET "/" for ::1 at 2020-05-12 15:07:52 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (Duration: 2.5ms | Allocations: 1201)
+  Rendered users/new.html.erb within layouts/application (Duration: 5.2ms | Allocations: 1510)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 266)
+Completed 200 OK in 99ms (Views: 86.7ms | ActiveRecord: 0.5ms | Allocations: 26801)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:07:53 -0500
+Processing by PostsController#update as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 669)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:97:in `set_post'
+Started GET "/posts" for ::1 at 2020-05-12 15:08:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#update as HTML
+Completed 404 Not Found in 7ms (ActiveRecord: 1.1ms | Allocations: 2702)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Post without an ID):
+  
+app/controllers/posts_controller.rb:97:in `set_post'
+Started GET "/posts" for ::1 at 2020-05-12 15:09:17 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 44.2ms | Allocations: 19201)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.6ms | Allocations: 267)
+Completed 200 OK in 139ms (Views: 126.0ms | ActiveRecord: 2.6ms | Allocations: 41899)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:15:11 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 34.1ms | Allocations: 18004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 106)
+Completed 200 OK in 116ms (Views: 109.8ms | ActiveRecord: 0.8ms | Allocations: 39613)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:15:14 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.9ms | Allocations: 1103)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 102)
+Completed 200 OK in 84ms (Views: 75.3ms | ActiveRecord: 0.3ms | Allocations: 22622)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:15:17 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"aoDqcBnW6dLSN2Q5xZJ1wMJoaS5eXddsWq2U9TMBCHTswYHrkQBvdmVQT31QAjHpyEqCYS9ymUdg28IO6m9qTg==", "post"=>{"texto"=>"Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.2ms | Allocations: 1717)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/controllers/posts_controller.rb:52:in `update'
+Started GET "/posts" for ::1 at 2020-05-12 15:15:23 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 26.7ms | Allocations: 6333)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 98ms (Views: 96.3ms | ActiveRecord: 0.6ms | Allocations: 26655)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:15:51 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.3ms | Allocations: 760)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 104)
+Completed 200 OK in 107ms (Views: 92.4ms | ActiveRecord: 1.3ms | Allocations: 28894)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:15:53 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"/XNv1FZhwlC+IIEbpmll/l7PlSe7t7638Tnz+wvirjR7MgRP3rdE9AlHql8z+SHXVO1+aMqY8JzLT6UA0ozMDg==", "post"=>{"texto"=>"Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+  [1m[36mPost Update All (1.2ms)[0m  [1m[33mUPDATE "posts" SET "hidden" = ? WHERE "posts"."texto" = ?[0m  [["hidden", 1], ["texto", "Primer Dibb"]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.4ms | Allocations: 2582)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: hidden):
+  
+app/controllers/posts_controller.rb:52:in `update'
+Started GET "/posts" for ::1 at 2020-05-12 15:16:03 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 31.1ms | Allocations: 13250)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 101ms (Views: 98.3ms | ActiveRecord: 1.6ms | Allocations: 33480)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:19:20 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 33.8ms | Allocations: 18732)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 106)
+Completed 200 OK in 117ms (Views: 109.9ms | ActiveRecord: 2.5ms | Allocations: 40346)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:19:22 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.4ms | Allocations: 751)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 6.9ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 100)
+Completed 200 OK in 104ms (Views: 97.9ms | ActiveRecord: 0.3ms | Allocations: 21848)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:19:24 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"si/mo59Hbd0gbpkz3xUC4kGkJCRziAYk45KPhzDSygY0bo04F5HreZcJsndKhUbLS4bPawKnSA/Z5Nl86byoPA==", "post"=>{"texto"=>"Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+[31mUnpermitted parameter: :cloned[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.2ms | Allocations: 2285)
+
+
+  
+TypeError (can't cast ActionController::Parameters):
+  
+app/controllers/posts_controller.rb:52:in `update'
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:19:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"iNopn5gxN2Xd/Nhp7J57ePl4KzmwCEnyGSX/ryarLoT5U/bupqQEkk56ek/vB42Y2ouzsjtlXgYeCXHc31M1Kw==", "post"=>{"texto"=>"Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+  [1m[36mPost Update All (0.3ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ? WHERE "posts"."texto" = ?[0m  [["texto", "Primer Dibb"], ["texto", "Primer Dibb"]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+  [1m[36mPost Update (1.0ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "compartir" = ?, "likes" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "Dibb"], ["compartir", 0], ["likes", 0], ["updated_at", "2020-05-12 20:19:47.202838"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 49ms (ActiveRecord: 6.7ms | Allocations: 19334)
+
+
+Started GET "/posts/1" for ::1 at 2020-05-12 15:19:47 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 8.0ms | Allocations: 5603)
+  Rendered posts/show.html.erb within layouts/application (Duration: 16.8ms | Allocations: 8647)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 106)
+Completed 200 OK in 106ms (Views: 96.2ms | ActiveRecord: 1.5ms | Allocations: 29812)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:19:49 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 6859)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 85ms (Views: 84.1ms | ActiveRecord: 0.6ms | Allocations: 27093)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:20:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.3ms | Allocations: 760)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 886)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 89ms (Views: 74.1ms | ActiveRecord: 1.4ms | Allocations: 28776)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:20:17 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"iZIRFNixKzpytXNeJT1OiGd1Zx7Sw5KqCtoz7cZIPLIP03qPUGetnsXSWBqwrQqhbVeMUaPs3IEwrGUWHyZeiA==", "post"=>{"texto"=>"Primer Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update (0.9ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "Primer Dibb"], ["updated_at", "2020-05-12 20:20:17.183924"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update All (0.3ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ? WHERE "posts"."texto" = ?[0m  [["texto", "Primer Dibb"], ["texto", "Dibb"]]
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 32ms (ActiveRecord: 4.6ms | Allocations: 12393)
+
+
+Started GET "/posts/1" for ::1 at 2020-05-12 15:20:17 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 6.9ms | Allocations: 5407)
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 8085)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 99ms (Views: 91.7ms | ActiveRecord: 1.5ms | Allocations: 28942)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:18 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 20.2ms | Allocations: 6856)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 91ms (Views: 89.3ms | ActiveRecord: 0.6ms | Allocations: 27081)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:20:20 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.1ms | Allocations: 699)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 5.6ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 82ms (Views: 75.5ms | ActiveRecord: 0.2ms | Allocations: 21675)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:20:22 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"AY04SFWBHBLquXIWGceq5i6OwfccbfOSnPYjaSJHW9yHzFPT3Veatl3eWVKMV+7PJKwquG1CvbmmgHWS+yk55g==", "post"=>{"texto"=>"Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update (0.8ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "Dibb"], ["updated_at", "2020-05-12 20:20:22.257082"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update All (2.9ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ? WHERE "posts"."texto" = ?[0m  [["texto", "Dibb"], ["texto", "Primer Dibb"]]
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 33ms (ActiveRecord: 6.6ms | Allocations: 5833)
+
+
+Started GET "/posts/1" for ::1 at 2020-05-12 15:20:22 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.2ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 1.0ms | Allocations: 574)
+  Rendered posts/show.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 85ms (Views: 78.6ms | ActiveRecord: 0.4ms | Allocations: 22528)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:23 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 6320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 100ms (Views: 99.1ms | ActiveRecord: 0.6ms | Allocations: 26550)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-05-12 15:20:27 -0500
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.0ms | Allocations: 699)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 1.7ms | Allocations: 822)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 79ms (Views: 73.0ms | ActiveRecord: 0.2ms | Allocations: 21691)
+
+
+Started PATCH "/posts/1" for ::1 at 2020-05-12 15:20:32 -0500
+Processing by PostsController#update as HTML
+  Parameters: {"authenticity_token"=>"YPUR9c3zxMtifAmp2iBFgiB6HZpoTuT8toN/9Wz04nTmtHpuRSVCb9UbIu1PsAGrKlj21RlhqteM9SkOtZqATg==", "post"=>{"texto"=>"Primer Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Update Post", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  [1m[36mCACHE Post Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:50:in `update'
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update (0.9ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ?, "updated_at" = ? WHERE "posts"."id" = ?[0m  [["texto", "Primer Dibb"], ["updated_at", "2020-05-12 20:20:32.638780"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:52:in `update'
+  [1m[36mPost Update All (2.9ms)[0m  [1m[33mUPDATE "posts" SET "texto" = ? WHERE "posts"."texto" = ?[0m  [["texto", "Primer Dibb"], ["texto", "Dibb"]]
+  ↳ app/controllers/posts_controller.rb:53:in `update'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 27ms (ActiveRecord: 6.6ms | Allocations: 5821)
+
+
+Started GET "/posts/1" for ::1 at 2020-05-12 15:20:32 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 1.1ms | Allocations: 574)
+  Rendered posts/show.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1667)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 87ms (Views: 80.2ms | ActiveRecord: 0.5ms | Allocations: 22530)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:33 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 18.5ms | Allocations: 6320)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 89ms (Views: 88.0ms | ActiveRecord: 0.6ms | Allocations: 26549)
+
+
+Started GET "/posts/new" for ::1 at 2020-05-12 15:20:43 -0500
+Processing by PostsController#new as HTML
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 1.0ms | Allocations: 673)
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 884)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 102)
+Completed 200 OK in 84ms (Views: 81.0ms | ActiveRecord: 0.0ms | Allocations: 21334)
+
+
+Started POST "/posts" for ::1 at 2020-05-12 15:20:49 -0500
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"/Bh4BP0PlLLDyNLzx36ZCN34NnNgwJxkaQnjKdgtii0uL3/UXVLMfThVyYvhHnes5wLOI1HLCmWAwWBkxBfq1A==", "post"=>{"texto"=>"Tercer Dibb", "compartir"=>"0", "likes"=>"0", "cloned"=>"0"}, "commit"=>"Create Post"}
+[31mUnpermitted parameter: :cloned[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mPost Create (1.0ms)[0m  [1m[32mINSERT INTO "posts" ("texto", "compartir", "likes", "created_at", "updated_at", "cloned") VALUES (?, ?, ?, ?, ?, ?)[0m  [["texto", "Tercer Dibb"], ["compartir", 0], ["likes", 0], ["created_at", "2020-05-12 20:20:49.133476"], ["updated_at", "2020-05-12 20:20:49.133476"], ["cloned", 0]]
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:28:in `create'
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/controllers/posts_controller.rb:31:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Update (0.9ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ?, "user_id" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2020-05-12 20:20:49.158765"], ["user_id", 2], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 44ms (ActiveRecord: 7.7ms | Allocations: 6629)
+
+
+Started GET "/posts/4" for ::1 at 2020-05-12 15:20:49 -0500
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:96:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mComentario Load (0.3ms)[0m  [1m[34mSELECT "comentarios".* FROM "comentarios" WHERE "comentarios"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:20
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comentarios/_form.html.erb (Duration: 1.2ms | Allocations: 575)
+  Rendered posts/show.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1669)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 100)
+Completed 200 OK in 82ms (Views: 75.4ms | ActiveRecord: 0.6ms | Allocations: 22643)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:50 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 26.1ms | Allocations: 7980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 99ms (Views: 97.7ms | ActiveRecord: 0.6ms | Allocations: 28220)
+
+
+Started GET "/posts/update_like?id=4" for ::1 at 2020-05-12 15:20:52 -0500
+Processing by PostsController#update_like as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `update_like'
+  [1m[36mPost Update All (3.4ms)[0m  [1m[33mUPDATE "posts" SET "likes" = COALESCE("likes", 0) + ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `update_like'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 16ms (ActiveRecord: 3.7ms | Allocations: 1632)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:52 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.1ms | Allocations: 7971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 92ms (Views: 90.9ms | ActiveRecord: 0.7ms | Allocations: 28214)
+
+
+Started GET "/posts/update_like?id=4" for ::1 at 2020-05-12 15:20:53 -0500
+Processing by PostsController#update_like as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `update_like'
+  [1m[36mPost Update All (3.3ms)[0m  [1m[33mUPDATE "posts" SET "likes" = COALESCE("likes", 0) + ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `update_like'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 15ms (ActiveRecord: 3.5ms | Allocations: 1528)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:53 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.0ms | Allocations: 7971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 103ms (Views: 101.5ms | ActiveRecord: 0.7ms | Allocations: 28210)
+
+
+Started GET "/posts/update_like?id=4" for ::1 at 2020-05-12 15:20:54 -0500
+Processing by PostsController#update_like as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `update_like'
+  [1m[36mPost Update All (3.2ms)[0m  [1m[33mUPDATE "posts" SET "likes" = COALESCE("likes", 0) + ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `update_like'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 15ms (ActiveRecord: 3.4ms | Allocations: 1514)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:54 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.3ms | Allocations: 7971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 90ms (Views: 88.9ms | ActiveRecord: 0.6ms | Allocations: 28201)
+
+
+Started GET "/posts/update_like?id=4" for ::1 at 2020-05-12 15:20:54 -0500
+Processing by PostsController#update_like as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `update_like'
+  [1m[36mPost Update All (3.2ms)[0m  [1m[33mUPDATE "posts" SET "likes" = COALESCE("likes", 0) + ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `update_like'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 3.4ms | Allocations: 1514)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:54 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 29.6ms | Allocations: 7971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 100ms (Views: 98.3ms | ActiveRecord: 0.7ms | Allocations: 28221)
+
+
+Started GET "/posts/update_like?id=4" for ::1 at 2020-05-12 15:20:55 -0500
+Processing by PostsController#update_like as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `update_like'
+  [1m[36mPost Update All (3.4ms)[0m  [1m[33mUPDATE "posts" SET "likes" = COALESCE("likes", 0) + ? WHERE "posts"."id" = ?[0m  [["likes", 1], ["id", 4]]
+  ↳ app/controllers/posts_controller.rb:74:in `update_like'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 11ms (ActiveRecord: 3.6ms | Allocations: 1518)
+
+
+Started GET "/posts" for ::1 at 2020-05-12 15:20:55 -0500
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY created_at DESC[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:9
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:15
+  Rendered posts/index.html.erb within layouts/application (Duration: 23.0ms | Allocations: 7971)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_navigation.html.erb (Duration: 0.2ms | Allocations: 101)
+Completed 200 OK in 94ms (Views: 93.0ms | ActiveRecord: 0.6ms | Allocations: 28227)
+
+
